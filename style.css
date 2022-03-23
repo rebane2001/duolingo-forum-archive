@@ -1,0 +1,64 @@
+body {
+    font-family: 'Nunito', sans-serif;
+    max-width: 1200px;
+    margin: 2em auto;
+}
+
+.avatar {
+    height: 60px;
+    width: 60px;
+    border-radius: 60px;
+    float: left;
+}
+
+h1, h2 {
+    margin: 0;
+}
+
+a, a:visited {
+    color: #1cb0f6;
+    text-decoration: none;
+}
+
+img.emoji {
+    height: 1em;
+    width: 1em;
+    margin: 0 .05em 0 .1em;
+    vertical-align: -0.1em;
+}
+
+.date, .count, .details {
+    color: #bbb;
+    font-weight: bold;
+}
+
+.post {
+    margin-left: 75px;
+}
+
+.suggested {
+    width: 300px;
+    float: right;
+    border: 2px solid black;
+    border-radius: 4px;
+    padding: 8px;
+}
+
+.sections {
+    width: 200px;
+}
+
+ul {
+    list-style-type: none; /* Remove bullets */
+    padding: 0; /* Remove padding */
+    margin: 0; /* Remove margins */
+}
+
+li {
+    padding-top: 5px;
+}
+
+a.disabled {
+    pointer-events: none;
+    color: gray;
+}

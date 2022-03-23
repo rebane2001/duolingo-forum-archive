@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Duolingo Forum Archive</title>
+    <link rel="stylesheet" href="/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Major+Mono+Display&family=Nunito:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+          rel="stylesheet">
+    <script src="https://twemoji.maxcdn.com/v/14.0.1/twemoji.min.js"
+            integrity="sha384-9XmaIHs67kvwAL3GE7nu7tddcROD/RBKYbYZcPd8KsVPdrA3U1574EW2PLtdTxDN"
+            crossorigin="anonymous"></script>
+</head>
+<body>
+<h1 class="header">Duolingo Forum Archive</h1>
+<br>
+<h2>-&gt; <a href="/topic/1">Browse the archive</a> &lt;-</h2>
+<br>
+<h2>How to use</h2>
+<p id="howto">To use this archive with a Duolingo Forum link, replace the <code>forum.duolingo.com</code> part in your
+    URL with <code>domain.name</code>.<br>For example, <code>https://forum.duolingo.com/comment/55930597</code> would
+    become <code>https://domain.name/comment/55930597</code>.</p>
+<p>You can also browse through the top posts of the forum by topic <a href="/topic/1">here</a>.</p>
+<h2>About</h2>
+<p>This is an independent archive of the Duolingo Forum, which was shut down on the 22nd of March 2022.</p>
+<p>People contacted me asking to preserve the content in the forum as they've found the community posts very useful when
+    learning languages. Therefore, I wrote some scripts to gather as many posts as possible before the
+    <a href="https://forum.duolingo.com/sunset">sunset</a>, and I'm now making the archive public for everyone to use.
+</p>
+<p>The archive contains nearly every forum thread where the ID ranges from 0 to 14000000, or from 46800000 to 57005930.
+    In addition to that, nearly every post showing up in the "top posts of all time" section is also available in this
+    archive, filling most of the missing threads in the 14000000 to 46800000 ID gap. Note that the IDs don't represent
+    the amount of forum threads, as every reply to a thread also incremented the ID.</p>
+<p>There are a total of <code>2098402</code> forum threads in this archive.</p>
+<h2>Downloading data</h2>
+<p>The archive is available for download as a collection of JSON files, which also includes the HTML/JS files I'm using
+    to render the archive on this site.</p>
+<p><a href="https://archive.org/download/duolingo-forum-archive/duolingo-forum-archive-2098402.tar.gz">duolingo-forum-archive-2098402.tar.gz</a> (3.3GiB, <a href="https://archive.org/details/duolingo-forum-archive">archive.org</a>)
+<br><a href="https://archive.org/download/duolingo-forum-archive/duolingo-forum-archive_archive.torrent">duolingo-forum-archive_archive.torrent</a></p>
+<h2>Disclaimer</h2>
+<p>This website is not an official <a href="https://duolingo.com/">Duolingo</a> site, the Duolingo trademark belongs to
+    Duolingo.</p>
+<p><span style="color:gray;font-family:monospace">hobune.stream [at] gmail.com</span></p>
+<script>
+    const howto = document.querySelector("#howto");
+    howto.innerHTML = howto.innerHTML.replaceAll("domain.name", document.location.host);
+</script>
+</body>
+</html>
