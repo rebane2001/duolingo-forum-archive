@@ -189,7 +189,7 @@ function renderPost(post) {
     const siteBody = document.querySelector(".site-body");
     siteBody.innerHTML = "";
     const crumbs = document.createElement("p");
-    crumbs.innerText = `FORUM > TOPIC: ${post.topic.name.toUpperCase()} > ${post.title}`
+    crumbs.innerHTML = `FORUM > <a href="/topic/${post.topic.id}">TOPIC: ${post.topic.name.toUpperCase()}</a> > ${post.title}`
     siteBody.appendChild(crumbs);
     siteBody.appendChild(document.createElement("hr"));
     const postContainer = renderPostContainer(post);
