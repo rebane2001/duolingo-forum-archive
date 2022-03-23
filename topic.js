@@ -80,6 +80,7 @@ fetch(`/data/topics/${topicId}`)
     .then(data => renderMeta(data));
 
 function fetchPages(page = 1) {
+    history.pushState(null, null, `/topic/${topicId}/${page}`);
     fetch(`/data/pages/topic_${topicId}/top/${page}.json`)
         .then(response => response.json())
         .then(data => renderPosts(data));
