@@ -202,7 +202,7 @@ if (!threadId)
     document.location.href = "/"
 
 fetch(`/data/comments/${threadId}.json`)
-    .then(response => response.json())
+    .then(response => {if (response.ok) return response.json(); throw "404, thread not in archive."})
     .then(data => renderPost(data))
     .catch(error => {
         document.querySelector(".site-body").innerText = `Error: ${error}`;
