@@ -167,7 +167,7 @@ function getPostComments(post) {
 function renderSuggestions(post) {
     const suggestions = document.querySelector(".suggested");
     const ul = document.createElement("ul");
-    for (const thread of post.related_comments) {
+    for (const thread of post.related_comments ?? []) {
         const li = document.createElement("li");
         const link = document.createElement("a");
         link.innerText = thread.title;
@@ -180,7 +180,8 @@ function renderSuggestions(post) {
         li.appendChild(count);
         ul.appendChild(li);
     }
-    suggestions.appendChild(ul);
+    if (post.related_comments)
+        suggestions.appendChild(ul);
 }
 
 function renderPost(post) {
