@@ -2,7 +2,16 @@ const topicId = parseInt(window.location.pathname.split("/")?.[2]) || 1;
 let pageNumber = parseInt(window.location.pathname.split("/")?.[3]) || 1;
 
 function renderMeta(data) {
-    document.querySelector("#title").innerText = `Top posts of topic ${data.name}`;
+
+    const title = document.querySelector("#title");
+    title.innerText = `Top posts of topic ${data.name} `;
+    const languagesEl = document.createElement("span");
+    let languages = data.comments?.[0]?.topic?.from_language_name || data.from_language;
+    if (data.learning_language)
+        languages += " -> " + (data.learning_language_string || data.learning_language);
+    languagesEl.innerText = `(${languages})`;
+    languagesEl.classList.add("details");
+    title.appendChild(languagesEl)
     const suggestions = document.querySelector(".suggested");
     const ul = document.createElement("ul");
     for (const topic of data.subtopics) {
