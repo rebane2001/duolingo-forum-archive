@@ -93,9 +93,19 @@ function getFlairs(user) {
     return flairs;
 }
 
+function setCanonicalUrl(url) {
+    if (!url) return;
+    const link = document.createElement('link');
+    link.setAttribute('rel', 'canonical');
+    link.setAttribute('href', url);
+    document.head.appendChild(link);
+}
+
 function getPostBody(post) {
     const postBody = document.createElement("div");
     postBody.classList.add("post");
+
+    setCanonicalUrl(post?.canonical_url?.replace('forum.duolingo.com', location.host));
 
     if (post.title) {
         const title = document.createElement("h2");

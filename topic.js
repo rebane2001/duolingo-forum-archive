@@ -1,8 +1,16 @@
 const topicId = parseInt(window.location.pathname.split("/")?.[2]) || 1;
 let pageNumber = parseInt(window.location.pathname.split("/")?.[3]) || 1;
 
-function renderMeta(data) {
+function setCanonicalUrl(url) {
+    if (!url) return;
+    const link = document.createElement('link');
+    link.setAttribute('rel', 'canonical');
+    link.setAttribute('href', url);
+    document.head.appendChild(link);
+}
 
+function renderMeta(data) {
+    setCanonicalUrl(`https://${location.host}/topic/${topicId}/${pageNumber}`);
     const title = document.querySelector("#title");
     title.innerText = `Top posts of topic ${data.name} `;
     const languagesEl = document.createElement("span");
